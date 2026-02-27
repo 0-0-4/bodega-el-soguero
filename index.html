@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bodega El Soguero | Tradición y Sabor</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B1D24", // Deep Spanish Red
+                        "background-light": "#FDFBF7", // Creamy Paper
+                        "background-dark": "#121212",
+                        "accent-wood": "#4A3728",
+                    },
+                    fontFamily: {
+                        display: ["Crimson Pro", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .rustic-border {
+            border-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 L100 0 L100 100 L0 100 Z" fill="none" stroke="%238B1D24" stroke-width="2" stroke-dasharray="4 2"/></svg>') 20 stretch;
+        }
+        .text-shadow-md {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 transition-colors duration-300">
+    <nav
+        class="fixed w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-display font-bold text-primary tracking-wider uppercase">Bodega El
+                    Soguero</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase">
+                <a class="hover:text-primary transition-colors" href="#historia">Nuestra Historia</a>
+                <a class="hover:text-primary transition-colors" href="#carta">Nuestra Carta</a>
+                <a class="hover:text-primary transition-colors" href="#ubicacion">Ubicación</a>
+                <a class="bg-primary text-white px-6 py-2 hover:bg-red-800 transition-all shadow-lg"
+                    href="#reservar">Reservar Ahora</a>
+            </div>
+            <div class="md:hidden">
+                <span class="material-symbols-outlined cursor-pointer">menu</span>
+            </div>
+        </div>
+    </nav>
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="imagenes/fondo.webp" alt="Interior rústico de la bodega"
+                class="w-full h-full object-cover scale-105 brightness-50 dark:brightness-[0.35]" />
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <h2 class="text-primary font-display italic text-2xl md:text-3xl mb-4 text-shadow-md">Desde 2003</h2>
+            <div class="relative z-10 flex flex-col items-center justify-center mb-12 group cursor-pointer">
+
+                <div class="mb-6 relative">
+                    <svg class="w-24 h-24 md:w-32 md:h-32 text-primary drop-shadow-xl transition-transform duration-700 group-hover:scale-110"
+                        viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M42 20C42 20 45 15 50 15C55 15 58 20 58 20V35C58 35 65 40 65 50V80C65 80 60 85 50 85C40 85 35 80 35 80V50C35 40 42 35 42 35V20Z"
+                            stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                        <path d="M40 30H60M38 40H62M38 50H62M40 60H60" stroke="currentColor" stroke-width="2"
+                            class="opacity-60" />
+                        <path d="M40 85C45 90 55 90 60 85" stroke="currentColor" stroke-width="3" stroke-dasharray="4 4"
+                            class="opacity-80" />
+                        <circle cx="50" cy="50" r="3" fill="white" class="animate-pulse" />
+                    </svg>
+                </div>
+
+                <div class="text-center">
+                    <span
+                        class="block text-4xl md:text-7xl font-display font-bold text-white leading-none tracking-[0.2em] uppercase text-shadow-md">
+                        Bodega
+                    </span>
+                    <div class="flex items-center justify-center mt-3">
+                        <div class="h-[1px] w-10 md:w-20 bg-primary/80"></div>
+                        <span
+                            class="px-5 text-xl md:text-3xl font-display italic text-primary tracking-widest text-shadow-md">
+                            El Soguero
+                        </span>
+                        <div class="h-[1px] w-10 md:w-20 bg-primary/80"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xl md:text-2xl text-stone-200 mb-10 font-light max-w-2xl mx-auto leading-relaxed italic">
+                Tradición y Sabor en el Corazón de la Bodega. Una experiencia gastronómica auténtica entre barricas.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <a href="Imagenes/menu.pdf" target="_blank"
+                    class="w-full md:w-auto px-8 py-4 bg-primary text-white text-lg font-medium hover:bg-red-800 transition-all uppercase tracking-widest">
+                    Ver la Carta
+                </a>
+                <a class="w-full md:w-auto px-8 py-4 border-2 border-white text-white text-lg font-medium hover:bg-white hover:text-stone-900 transition-all uppercase tracking-widest"
+                    href="#reservar">Reservar Mesa</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <span class="material-symbols-outlined text-white text-4xl">expand_more</span>
+        </div>
+    </header>
+    <section class="py-24 bg-white dark:bg-stone-900 overflow-hidden" id="historia">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                    <img alt="vista1 y zona de barra rústica"
+                        class="relative z-10 w-full aspect-[4/5] object-cover rounded-sm shadow-2xl border-8 border-background-light dark:border-stone-800"
+                        src="imagenes/vista1.webp" />
+                    <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-accent-wood/10 rounded-full blur-3xl"></div>
+                </div>
+                <div>
+                    <span class="text-primary font-bold uppercase tracking-widest text-sm inline-block mb-4">Nuestro
+                        Legado</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-8 dark:text-white">Nuestra Historia</h2>
+                    <p class="text-lg text-stone-600 dark:text-stone-400 mb-6 leading-relaxed">
+                        En el corazón del Aljarafe, donde los olivos abrazan el horizonte, se alza Bodega El Soguero.
+                        Desde nuestra fundación, hemos sido guardianes de la esencia de Bollullos de la Mitación, un
+                        pueblo con alma de mosto y sabor a tradición.
+                        <br><br>
+                        Nuestra bodega no es solo un lugar de paso; es un refugio donde las vigas de madera y el frescor
+                        de la piedra cuentan historias de vendimias pasadas. Aquí, el mosto de la tierra es el
+                        protagonista, servido con el respeto que merece el fruto de nuestras viñas.
+                        <br><br>
+                        En El Soguero, creemos en la cocina de siempre. Por eso, acompañamos nuestros caldos con lo
+                        mejor de nuestra gastronomía local: desde un buen guiso casero hasta las mejores carnes,
+                        servidas en un ambiente de elegancia rústica que te hará sentir como en tu propia casa.
+                        <br><br>
+                        Bienvenidos a la autenticidad, bienvenidos a nuestra bodega.
+                    </p>
+                    <p class="text-lg text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">
+                        Fundada en el corazón de nuestra comunidad, nos hemos mantenido fieles a nuestras raíces,
+                        seleccionando solo los mejores ingredientes locales para ofrecerte el sabor genuino de la
+                        tradición, servido en un ambiente de elegancia rústica y calidez acogedora.
+                    </p>
+                    <div class="border-l-4 border-primary pl-6 py-2 italic text-stone-700 dark:text-stone-300">
+                        "El vino y el pan son el espíritu de la mesa; la amistad es su alma."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-background-light dark:bg-background-dark" id="carta">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-primary font-display italic text-2xl mb-2">Recomendaciones de la casa</h2>
+                <h3 class="text-4xl md:text-5xl font-display font-bold dark:text-white uppercase tracking-tight">Nuestra
+                    Carta</h3>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="group relative bg-white dark:bg-stone-900 rounded-sm overflow-hidden shadow-xl border border-stone-100 dark:border-stone-800">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img alt="Revuelto Bacalao Dorado"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="imagenes/bacalado.jpeg" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="text-xl font-display font-bold dark:text-white">Revuelto Bacalao Dorado</h4>
+                            <span class="text-primary font-bold text-lg">14€</span>
+                        </div>
+                        <p class="text-stone-600 dark:text-stone-400 mb-4 text-sm italic leading-relaxed">
+                            Delicado bacalao desmigado, revuelto con huevos camperos y cebolla pochada a fuego lento.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="group relative bg-white dark:bg-stone-900 rounded-sm overflow-hidden shadow-xl border border-stone-100 dark:border-stone-800">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img alt="Lasaña Crujiente de Carrillera Y Queso Payoyo"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="imagenes/lasaña.jpeg" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="text-xl font-display font-bold dark:text-white">Lasaña Crujiente de Carrillera Y
+                                Queso Payoyo</h4>
+                            <span class="text-primary font-bold text-lg">14€</span>
+                        </div>
+                        <p class="text-stone-600 dark:text-stone-400 mb-4 text-sm italic leading-relaxed">
+                            Suave carrillera guisada a baja temperatura, cubierta con una lámina crujiente de pasta
+                            wonton y gratinada con queso Payoyo de la Sierra de Grazalema.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="group relative bg-white dark:bg-stone-900 rounded-sm overflow-hidden shadow-xl border border-stone-100 dark:border-stone-800">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img alt="Tartar de atun"
+                            class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                            src="imagenes/tartar_atun.jpeg" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="text-xl font-display font-bold dark:text-white">Tartar de atun</h4>
+                            <span class="text-primary font-bold text-lg">15€</span>
+                        </div>
+                        <p class="text-stone-600 dark:text-stone-400 mb-4 text-sm italic leading-relaxed">
+                            Dados de atún rojo de almadraba marinados en soja y cítricos,
+                            sobre una base de aguacate maduro y un toque de sésamo tostado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <button class="mt-16 text-center">
+                    <a href="Imagenes/menu.pdf" target="_blank"
+                        class="inline-block px-12 py-4 border-2 border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                        Ver Menú Completo
+                    </a>
+            </div>
+            </button>
+        </div>
+        </div>
+    </section>
+    <section class="py-24 bg-accent-wood text-white overflow-hidden relative" id="reservar">
+        <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+            <svg class="h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <path d="M100 0 L100 100 L0 100 Z" fill="currentColor"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-8">Ubicación y Horarios</h2>
+                        <p class="text-stone-300 mb-12 text-lg leading-relaxed">
+                            Acompáñenos para una velada de calidez y sabor. Nuestras puertas están abiertas para
+                            recibirle con lo mejor de nuestra tierra.
+                        </p>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-6">
+                            <span
+                                class="material-symbols-outlined text-primary p-3 bg-white/10 rounded-full">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Dirección</h4>
+                                <p class="text-stone-400 font-display">C. Sevilla, 32<br>Bollullos de la
+                                    Mitación<br>41110 Sevilla</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <span
+                                class="material-symbols-outlined text-primary p-3 bg-white/10 rounded-full">schedule</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Horario de Apertura</h4>
+                                <p class="text-stone-400 font-display">Lunes - Viernes: 12:00 - 17:00<br>Sábados: 09:00
+                                    - 17:00<br>Domingos: Cerrado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-stone-900 p-8 md:p-12 shadow-2xl rounded-sm">
+                    <form id="reservaForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Nombre</label>
+                                <input name="nombre" required
+                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
+                                    placeholder="Su Nombre" type="text" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Teléfono</label>
+                                <input name="telefono" required
+                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
+                                    placeholder="Su Teléfono" type="tel" />
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Fecha</label>
+                                <input name="fecha" id="fechaInput" required
+                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
+                                    type="date" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Hora</label>
+                                <select name="hora" id="horaSelect" required
+                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2">
+                                    <option value="">Elige fecha primero</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Comensales</label>
+                                <select name="comensales"
+                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2">
+                                    <option value="1">1 Persona</option>
+                                    <option value="2">2 Personas</option>
+                                    <option value="3">3 Personas</option>
+                                    <option value="4">4 Personas</option>
+                                    <option value="5">5 Personas</option>
+                                    <option value="6+">6+ Personas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Peticiones
+                                Especiales</label>
+                            <textarea name="mensaje"
+                                class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
+                                placeholder="Alergias, celebraciones, etc..." rows="4"></textarea>
+                        </div>
+
+                        <button
+                            class="w-full py-4 bg-primary text-white font-bold uppercase tracking-widest text-lg hover:bg-red-800 transition-all shadow-lg"
+                            type="submit">Confirmar Reserva</button>
+                        <p id="form-response-message" class="text-center mt-4 font-bold hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const reservaForm = document.getElementById('reservaForm');
+        const submitBtn = reservaForm.querySelector('button[type="submit"]');
+        const inputFecha = document.getElementById('fechaInput');
+        const selectHora = document.getElementById('horaSelect');
+        const messageContainer = document.getElementById('form-response-message');
+
+        // 1. Bloquear fechas pasadas
+        const hoy = new Date().toISOString().split('T')[0];
+        inputFecha.setAttribute('min', hoy);
+
+        // 2. Generar opciones de 30 minutos
+        function actualizarHoras(inicio, fin) {
+            selectHora.innerHTML = '<option value="">Seleccione hora</option>';
+            for (let h = inicio; h < fin; h++) {
+                for (let m = 0; m < 60; m += 30) {
+                    const valor = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+                    const opt = document.createElement('option');
+                    opt.value = valor;
+                    opt.textContent = valor;
+                    selectHora.appendChild(opt);
+                }
+            }
+            // Añadir cierre (17:00)
+            const finalOpt = document.createElement('option');
+            finalOpt.value = "17:00";
+            finalOpt.textContent = "17:00";
+            selectHora.appendChild(finalOpt);
+        }
+
+        // 3. Validar día y cargar horas
+        inputFecha.addEventListener('change', () => {
+            const fechaObj = new Date(inputFecha.value);
+            const dia = fechaObj.getUTCDay(); // 0=Dom, 6=Sáb
+
+            if (dia === 0) {
+                alert("Los domingos estamos cerrados.");
+                inputFecha.value = "";
+                selectHora.innerHTML = '<option value="">Elige fecha primero</option>';
+            } else if (dia === 6) {
+                actualizarHoras(9, 17); // Sábados de 09 a 17
+            } else {
+                actualizarHoras(12, 17); // L-V de 12 a 17
+            }
+        });
+
+        // 4. Enviar a n8n
+        reservaForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            messageContainer.classList.add('hidden');
+
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Verificando...';
+            submitBtn.disabled = true;
+
+            const data = Object.fromEntries(new FormData(reservaForm));
+            const N8N_URL = 'https://vmi3024621.contaboserver.net/webhook/08294d74-a3dd-412f-b2c5-14edf7adddaa';
+
+            try {
+                const response = await fetch(N8N_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+
+                if (response.ok && result.haySitio === true) {
+                    alert('¡Reserva confirmada! Te esperamos.');
+                    reservaForm.reset();
+                    selectHora.innerHTML = '<option value="">Elige fecha primero</option>';
+                } else {
+                    messageContainer.innerText = result.message || 'Aforo completo.';
+                    messageContainer.className = 'text-center mt-4 font-bold text-red-600';
+                    messageContainer.classList.remove('hidden');
+                }
+            } catch (err) {
+                alert('Error al conectar. Llámanos al +34 615 230 205.');
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
