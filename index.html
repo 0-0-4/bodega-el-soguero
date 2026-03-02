@@ -60,9 +60,21 @@
                 <a class="bg-primary text-white px-6 py-2 hover:bg-red-800 transition-all shadow-lg"
                     href="#reservar">Reservar Ahora</a>
             </div>
-            <div class="md:hidden">
-                <span class="material-symbols-outlined cursor-pointer" aria-label="Abrir menú de navegación" role="button" tabindex="0">menu</span>
-            </div>
+            <button id="menuBtn" class="md:hidden p-1" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span id="menuIcon" class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        <!-- Menú móvil desplegable -->
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-stone-200 dark:border-stone-800 px-6 py-4 space-y-1 text-sm font-medium tracking-widest uppercase">
+            <a class="block hover:text-primary transition-colors py-3 border-b border-stone-100 dark:border-stone-800"
+                href="#historia">Nuestra Historia</a>
+            <a class="block hover:text-primary transition-colors py-3 border-b border-stone-100 dark:border-stone-800"
+                href="#carta">Nuestra Carta</a>
+            <a class="block hover:text-primary transition-colors py-3 border-b border-stone-100 dark:border-stone-800"
+                href="#ubicacion">Ubicación</a>
+            <a class="block bg-primary text-white text-center px-6 py-3 mt-3 hover:bg-red-800 transition-all"
+                href="#reservar">Reservar Ahora</a>
         </div>
     </nav>
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -422,6 +434,27 @@
 
 
     <script>
+        // Menú móvil
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.textContent = isOpen ? 'menu' : 'close';
+            menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Formulario de reserva
         const reservaForm = document.getElementById('reservaForm');
         const submitBtn = reservaForm.querySelector('button[type="submit"]');
         const inputFecha = document.getElementById('fechaInput');
