@@ -56,6 +56,7 @@
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase">
                 <a class="hover:text-primary transition-colors" href="#historia">Nuestra Historia</a>
                 <a class="hover:text-primary transition-colors" href="#carta">Nuestra Carta</a>
+                <a class="hover:text-primary transition-colors" href="catalogo.html">Catálogo</a>
                 <a class="hover:text-primary transition-colors" href="#ubicacion">Ubicación</a>
                 <a class="bg-primary text-white px-6 py-2 hover:bg-red-800 transition-all shadow-lg"
                     href="#reservar">Reservar Ahora</a>
@@ -71,6 +72,8 @@
                 href="#historia">Nuestra Historia</a>
             <a class="block hover:text-primary transition-colors py-3 border-b border-stone-100 dark:border-stone-800"
                 href="#carta">Nuestra Carta</a>
+            <a class="block hover:text-primary transition-colors py-3 border-b border-stone-100 dark:border-stone-800"
+                href="catalogo.html">Catálogo</a>
             <a class="block hover:text-primary transition-colors py-3 border-b border-stone-100 dark:border-stone-800"
                 href="#ubicacion">Ubicación</a>
             <a class="block bg-primary text-white text-center px-6 py-3 mt-3 hover:bg-red-800 transition-all"
@@ -237,10 +240,14 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-16 text-center">
+            <div class="mt-16 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="imagenes/menu.pdf" target="_blank"
                     class="inline-block px-12 py-4 border-2 border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
                     Ver Menú Completo
+                </a>
+                <a href="catalogo.html"
+                    class="inline-block px-12 py-4 bg-primary text-white font-bold uppercase tracking-widest hover:bg-red-800 transition-all shadow-lg">
+                    Explorar Catálogo Completo
                 </a>
             </div>
         </div>
@@ -278,79 +285,17 @@
                                 class="material-symbols-outlined text-primary p-3 bg-white/10 rounded-full">schedule</span>
                             <div>
                                 <h4 class="font-bold text-lg mb-1">Horario de Apertura</h4>
-                                <p class="text-stone-400 font-display">Lunes - Viernes: 12:00 - 17:00<br>Sábados: 09:00
-                                    - 17:00<br>Domingos: Cerrado</p>
+                                <p class="text-stone-400 font-display">Lunes - Domingo: 12:00 - 18:00</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white dark:bg-stone-900 p-8 md:p-12 shadow-2xl rounded-sm">
-                    <form id="reservaForm" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="inputNombre"
-                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Nombre</label>
-                                <input id="inputNombre" name="nombre" required
-                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
-                                    placeholder="Su Nombre" type="text" />
-                            </div>
-                            <div>
-                                <label for="inputTelefono"
-                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Teléfono</label>
-                                <input id="inputTelefono" name="telefono" required
-                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
-                                    placeholder="Su Teléfono" type="tel" />
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <label for="fechaInput"
-                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Fecha</label>
-                                <input name="fecha" id="fechaInput" required
-                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
-                                    type="date" />
-                            </div>
-                            <div>
-                                <label for="horaSelect"
-                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Hora</label>
-                                <select name="hora" id="horaSelect" required
-                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2">
-                                    <option value="">Elige fecha primero</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="selectComensales"
-                                    class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Comensales</label>
-                                <select id="selectComensales" name="comensales"
-                                    class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2">
-                                    <option value="1">1 Persona</option>
-                                    <option value="2">2 Personas</option>
-                                    <option value="3">3 Personas</option>
-                                    <option value="4">4 Personas</option>
-                                    <option value="5">5 Personas</option>
-                                    <option value="6+">6+ Personas</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="textareaMensaje"
-                                class="block text-sm font-bold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wide">Peticiones
-                                Especiales</label>
-                            <textarea id="textareaMensaje" name="mensaje"
-                                class="w-full bg-stone-50 dark:bg-stone-800 border-stone-200 text-black px-4 py-2"
-                                placeholder="Alergias, celebraciones, etc..." rows="4"></textarea>
-                        </div>
-
-                        <button
-                            class="w-full py-4 bg-primary text-white font-bold uppercase tracking-widest text-lg hover:bg-red-800 transition-all shadow-lg"
-                            type="submit">Confirmar Reserva</button>
-                        <p id="form-response-message" class="text-center mt-4 font-bold hidden"></p>
-                    </form>
+                   <!-- Widget de reservas: Reserva Mesa Bar Paco -->
+                    <div id="hotel-reservas"></div>
+                    <script src="https://savvytechhotels.github.io/motor_reserva/widget-reservas.js?service_slug=reserva-mesa-bar-paco"></script>     
                 </div>
-            </div>
         </div>
     </section>
     <section
@@ -399,6 +344,7 @@
                     <ul class="space-y-4 text-stone-500 text-sm">
                         <li><a class="hover:text-primary transition-colors" href="#historia">Nuestra Historia</a></li>
                         <li><a class="hover:text-primary transition-colors" href="#carta">Nuestra Carta</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="catalogo.html">Catálogo Gastronómico</a></li>
                         <li><a class="hover:text-primary transition-colors" href="#reservar">Reservas</a></li>
                         <li><a class="hover:text-primary transition-colors" href="#">Lista de Vinos</a></li>
                     </ul>
@@ -424,109 +370,100 @@
 
 
     <script>
-        // Menú móvil
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
+    // Menú móvil
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
 
-        menuBtn.addEventListener('click', () => {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.textContent = isOpen ? 'menu' : 'close';
-            menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.textContent = isOpen ? 'menu' : 'close';
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+            menuBtn.setAttribute('aria-expanded', 'false');
         });
+    });
 
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.textContent = 'menu';
-                menuBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
+    // Formulario de reserva
+    const reservaForm = document.getElementById('reservaForm');
+    const submitBtn = reservaForm.querySelector('button[type="submit"]');
+    const inputFecha = document.getElementById('fechaInput');
+    const selectHora = document.getElementById('horaSelect');
+    const messageContainer = document.getElementById('form-response-message');
 
-        // Formulario de reserva
-        const reservaForm = document.getElementById('reservaForm');
-        const submitBtn = reservaForm.querySelector('button[type="submit"]');
-        const inputFecha = document.getElementById('fechaInput');
-        const selectHora = document.getElementById('horaSelect');
-        const messageContainer = document.getElementById('form-response-message');
+    // 1. Bloquear fechas pasadas
+    const hoy = new Date().toISOString().split('T')[0];
+    inputFecha.setAttribute('min', hoy);
 
-        // 1. Bloquear fechas pasadas
-        const hoy = new Date().toISOString().split('T')[0];
-        inputFecha.setAttribute('min', hoy);
-
-        // 2. Generar opciones de 30 minutos
-        function actualizarHoras(inicio, fin) {
-            selectHora.innerHTML = '<option value="">Seleccione hora</option>';
-            for (let h = inicio; h < fin; h++) {
-                for (let m = 0; m < 60; m += 30) {
-                    const valor = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
-                    const opt = document.createElement('option');
-                    opt.value = valor;
-                    opt.textContent = valor;
-                    selectHora.appendChild(opt);
-                }
+    // 2. Generar opciones de 30 minutos (De 12:00 a 18:00)
+    function actualizarHoras(inicio, fin) {
+        selectHora.innerHTML = '<option value="">Seleccione hora</option>';
+        for (let h = inicio; h < fin; h++) {
+            for (let m = 0; m < 60; m += 30) {
+                const valor = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+                const opt = document.createElement('option');
+                opt.value = valor;
+                opt.textContent = valor;
+                selectHora.appendChild(opt);
             }
-            // Añadir cierre (17:00)
-            const finalOpt = document.createElement('option');
-            finalOpt.value = "17:00";
-            finalOpt.textContent = "17:00";
-            selectHora.appendChild(finalOpt);
         }
+        // Añadir hora final exacta (18:00)
+        const finalOpt = document.createElement('option');
+        finalOpt.value = "18:00";
+        finalOpt.textContent = "18:00";
+        selectHora.appendChild(finalOpt);
+    }
 
-        // 3. Validar día y cargar horas
-        inputFecha.addEventListener('change', () => {
-            const fechaObj = new Date(inputFecha.value);
-            const dia = fechaObj.getUTCDay(); // 0=Dom, 6=Sáb
+    // 3. Cargar horas al cambiar la fecha (Igual para todos los días)
+    inputFecha.addEventListener('change', () => {
+        if (inputFecha.value) {
+            actualizarHoras(12, 18); // Horario unificado: 12:00 a 18:00
+        }
+    });
 
-            if (dia === 0) {
-                alert("Los domingos estamos cerrados.");
-                inputFecha.value = "";
+    // 4. Enviar a n8n
+    reservaForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        messageContainer.classList.add('hidden');
+
+        const originalText = submitBtn.innerText;
+        submitBtn.innerText = 'Verificando...';
+        submitBtn.disabled = true;
+
+        const data = Object.fromEntries(new FormData(reservaForm));
+        const N8N_URL = 'https://vmi3024621.contaboserver.net/webhook/08294d74-a3dd-412f-b2c5-14edf7adddaa';
+
+        try {
+            const response = await fetch(N8N_URL, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            const result = await response.json();
+
+            if (response.ok && result.haySitio === true) {
+                alert('¡Reserva confirmada! Te esperamos.');
+                reservaForm.reset();
                 selectHora.innerHTML = '<option value="">Elige fecha primero</option>';
-            } else if (dia === 6) {
-                actualizarHoras(9, 17); // Sábados de 09 a 17
             } else {
-                actualizarHoras(12, 17); // L-V de 12 a 17
+                messageContainer.innerText = result.message || 'Aforo completo.';
+                messageContainer.className = 'text-center mt-4 font-bold text-red-600';
+                messageContainer.classList.remove('hidden');
             }
-        });
-
-        // 4. Enviar a n8n
-        reservaForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            messageContainer.classList.add('hidden');
-
-            const originalText = submitBtn.innerText;
-            submitBtn.innerText = 'Verificando...';
-            submitBtn.disabled = true;
-
-            const data = Object.fromEntries(new FormData(reservaForm));
-            const N8N_URL = 'https://vmi3024621.contaboserver.net/webhook/08294d74-a3dd-412f-b2c5-14edf7adddaa';
-
-            try {
-                const response = await fetch(N8N_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: { 'Content-Type': 'application/json' }
-                });
-                const result = await response.json();
-
-                if (response.ok && result.haySitio === true) {
-                    alert('¡Reserva confirmada! Te esperamos.');
-                    reservaForm.reset();
-                    selectHora.innerHTML = '<option value="">Elige fecha primero</option>';
-                } else {
-                    messageContainer.innerText = result.message || 'Aforo completo.';
-                    messageContainer.className = 'text-center mt-4 font-bold text-red-600';
-                    messageContainer.classList.remove('hidden');
-                }
-            } catch (err) {
-                alert('Error al conectar. Llámanos al +34 615 230 205.');
-            } finally {
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    </script>
+        } catch (err) {
+            alert('Error al conectar. Llámanos al +34 615 230 205.');
+        } finally {
+            submitBtn.innerText = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+</script>
 </body>
 
 </html>
